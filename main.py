@@ -43,7 +43,7 @@ while True:
                 cur_pose = cur_pose @ transf
         
         hom_array = np.array([[0, 0, 0, 1]])
-        hom_camera_pose = np.concatenate((cur_pose, hom_array), axis=0)
+        hom_camera_pose = np.concatenate((cur_pose, hom_array), axis = 0)
         camera_pose_list.append(hom_camera_pose)
         estimated_path.append((cur_pose[0, 3], cur_pose[2, 3]))
         
@@ -67,7 +67,9 @@ while True:
     cv2.putText(new_frame, str(np.round(cur_pose[1, 3], 1)), (540, 90), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 1)
     cv2.putText(new_frame, str(np.round(cur_pose[2, 3], 1)), (540, 130), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 255), 1)
     
-    cv2.imshow("img", new_frame)
+    cv2.imshow("Visual Odometry", new_frame)
+    
+    cv2.waitKey(5)
     
 for cur_pose in camera_pose_list:
     print(cur_pose[0, 3])
