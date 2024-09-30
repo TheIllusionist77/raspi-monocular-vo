@@ -1,4 +1,4 @@
-# monocular_vo
+# raspi-monocular_vo
 A monocular, camera-based, visual odometry system designed to run on a Raspberry Pi using the WIDE Raspberry Pi Camera v3.
 
 Note: If you're using any other camera, the intrinsic matrix will need to be re-calculated.
